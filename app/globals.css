@@ -1,26 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Base styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Parallax sections */
+.parallax1 {
+  @apply bg-[url('/img/construction.jpg')] min-h-[400px] h-[800px] bg-center bg-no-repeat bg-cover flex justify-center align-middle overflow-hidden md:bg-fixed;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.parallax2 {
+  @apply bg-[url('/img/office.jpg')] h-[1100px] md:bg-left-top bg-center bg-no-repeat bg-cover flex justify-center overflow-hidden md:bg-fixed;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.parallax3 {
+  @apply bg-[url('/img/nice.jpg')] h-[800px] md:bg-left-top bg-center bg-no-repeat bg-cover flex justify-center overflow-hidden  md:bg-fixed;
 }
+
+/* Content sections */
+.content1 {
+  @apply bg-[url('/img/awards.jpg')] h-[1300px] bg-center bg-no-repeat bg-cover flex justify-center overflow-hidden;
+}
+
+.content2 {
+  @apply bg-[url('/img/signing.jpg')] h-[1300px] bg-center bg-no-repeat bg-cover flex justify-center items-center overflow-hidden;
+}
+
+/* Overlay */
+.p-overlay1 {
+  @apply fixed w-full h-full top-0 left-0 z-10 bg-black/30;
+}
+
+/* Icon button utility */
+.icon-btn {
+  @apply w-9 h-9 flex items-center justify-center rounded-full border border-white hover:bg-white hover:text-black transition duration-300 cursor-pointer;
+}
+
+
+
+
+
