@@ -1,5 +1,5 @@
 import Navbar from "@/components/Navbar";
-import Content from "@/components/Content";
+import Homepage from "@/components/Homepage";
 import React from "react";
 import Footer from "@/components/footer"
 
@@ -10,7 +10,7 @@ export default  function Home() {
   return (
     <div>
       <Navbar /> 
-      <Content />
+      <Homepage />
       <Footer />
     
    </div>

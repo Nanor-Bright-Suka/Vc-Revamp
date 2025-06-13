@@ -2,7 +2,7 @@
 import React from 'react'
 
 export default function Content() {
- // await new Promise((resolve) => setTimeout(resolve, 2000)); // Simulate delay
+
   return (
       <> 
            <div className="parallax1">

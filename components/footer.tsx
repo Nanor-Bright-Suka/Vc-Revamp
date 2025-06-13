@@ -3,10 +3,19 @@ import Link from 'next/link'
 import { FaFacebookF, FaLinkedinIn, FaInstagram } from 'react-icons/fa6'
 import { IoIosArrowUp } from 'react-icons/io'
 import { motion } from 'framer-motion'
+import { footerVariant, footerStyle } from './navbar.config';
 
-export default function Footer() {
+
+
+ type footerStyle = {
+      variant?: footerVariant;
+    };
+
+export default function Footer({variant="altitude"}: footerStyle) {
+      const {aboutFooter} = footerStyle[variant];
+
   return (
-    <footer className="bg-[#1a1a1a] text-white py-6 relative bottom-0 z-10">
+    <footer className={`bg-[#0a0a02] text-white py-10 -mx-0.5 relative bottom-0 z-10 ${aboutFooter}`}>
       <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
         
         {/* Left - Copyright */}
