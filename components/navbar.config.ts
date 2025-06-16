@@ -6,24 +6,24 @@ export const navbarStyles = {
   light: {
     text: 'text-white',
     underline: 'after:bg-white',
-   
+    position:'absolute z-50 w-full -mt-5'   
   },
   dark: {
     text: 'text-gray-700',
     underline: 'after:bg-black/50',
-   
+   position: 'relative'
   },
   primary: {
     text: 'text-blue-700',
     underline: 'after:bg-blue-700',
-    
+    position: 'relative'
   },
   red: {
     text: 'text-red-700',
     underline: 'after:bg-red-700',
-    
+    position: 'relative'
   },
-} satisfies Record<NavbarVariant, { text: string; underline: string }>;
+} satisfies Record<NavbarVariant, { text: string; underline: string , position: string }>;
 
 
 

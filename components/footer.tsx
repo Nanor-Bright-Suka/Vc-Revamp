@@ -59,7 +59,7 @@ export default function Footer({variant="altitude"}: footerStyle) {
           {/* Scroll to Top with Animation */}
           <motion.button
   onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-  whileHover={{ scale: 1.2, rotate: 180 }}
+  whileHover={{ scale: 1.2}}
   whileTap={{ scale: 0.95 }}
   transition={{ duration: 0.5, ease: 'easeInOut' }}
   className="icon-btn"
@@ -76,9 +76,9 @@ export default function Footer({variant="altitude"}: footerStyle) {
 
 // Tooltip component
 const Tooltip = ({ children, text }: { children: React.ReactNode; text: string }) => (
-  <div>
+  <div className="relative group">
     {children}
-    <div className="absolute -top-8 left-1/2 -translate-x-1/2 scale-0 group-hover:scale-100 bg-white text-black text-xs px-2 py-1 rounded transition-all duration-200 whitespace-nowrap z-20">
+    <div className="absolute -top-8 left-1/2 -translate-x-1/2 scale-0 group-hover:scale-100 bg-white text-black text-xs px-2 py-1 rounded transition-all duration-200 whitespace-nowrap z-20 shadow">
       {text}
     </div>
   </div>

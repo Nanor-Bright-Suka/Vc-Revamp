@@ -1,5 +1,5 @@
 import React from 'react';
-import AboutComponent from '@/components/aboutcomponent';
+import AboutComponent from '@/components/about/aboutcomponent';
 
 export default function About() {
     return (
