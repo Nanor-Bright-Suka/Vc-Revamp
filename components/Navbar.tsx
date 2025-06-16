@@ -23,7 +23,7 @@ const navLinks = [
     ],
   },
 
-  { name: 'Reach Out', href: '/contact' },
+  { name: 'Contact', href: '/contact' },
 ];
 
 
@@ -44,7 +44,7 @@ export default function Navbar({ variant = "light"}: NavbarProps) {
     <header className={`${position}`}>
       {/* Overlay */}
       <div
-        className={`fixed inset-0 bg-black/50 h-full backdrop-blur-sm transition-opacity duration-700 md:hidden ${
+        className={`fixed inset-0 bg-black/50 h-screen backdrop-blur-sm transition-opacity duration-700 md:hidden ${
           isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
         }`}
       ></div>

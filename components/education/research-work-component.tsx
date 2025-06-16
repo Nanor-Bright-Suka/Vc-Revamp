@@ -10,7 +10,7 @@ type Props = {
 
 export default function ResearchCard({ title, link }: Props) {
   return (
-    <div className="border border-gray-200 p-4 rounded-xl shadow-sm hover:shadow-md transition-all">
+    <div className="max-w-5xl border border-gray-200 p-4 rounded-xl shadow-sm hover:shadow-md transition-all">
       <Link
         href={link} 
         target="_blank"

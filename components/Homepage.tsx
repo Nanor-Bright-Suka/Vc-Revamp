@@ -77,9 +77,10 @@ export default function Content() {
   return (
     <> 
       {/* Parallax 1 */}
+      
       <div className="parallax1">
-        <div className="p-overlay1" />
-        <div className="relative z-20 px-6 py-12 text-center text-white leading-relaxed max-w-4xl">
+         <div className="p-overlay1" />
+        <div className="relative z-20 px-6 py-6 text-center text-white leading-relaxed max-w-4xl">
           <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-6">
             Welcome to Dr. & Mrs. Ohene-Afoakwa&apos;s Homepage
           </h1>

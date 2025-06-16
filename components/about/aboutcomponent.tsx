@@ -17,7 +17,7 @@ export default function AboutComponent() {
 
     return (
 
- <section className="relative w-full min-h-screen flex flex-col justify-between px-0.5 py-5 overflow-hidden">
+ <section className="relative w-full min-h-screen flex flex-col justify-between px-0.5 py-5 overflow-hidden border-2">
             {/* Navbar */}
             <div className='w-full mb-20'>
                 <h2 className="text-lg font-bold text-gray-700 text-center">

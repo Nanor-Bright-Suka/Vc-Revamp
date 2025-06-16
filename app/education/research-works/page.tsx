@@ -17,6 +17,7 @@ export default function ResearchPage() {
   const goToNext = () => setCurrentPage(prev => Math.min(prev + 1, totalPages));
 
   return (
+    
     <div className="max-w-5xl mx-auto px-6 py-10">
       <h1 className="text-3xl font-bold mb-6 max-md:mt-12 ">Research Publications</h1>
 

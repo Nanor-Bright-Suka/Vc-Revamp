@@ -51,17 +51,18 @@
 html, body {
   margin: 0;
   padding: 0;
-  scroll-behavior: smooth;
-  overflow-x: hidden;
+  box-sizing: border-box;
+
 }
+
 
 /* Parallax sections */
  .parallax1 {
-  @apply bg-[url('/img/construction.jpg')] min-h-screen bg-center bg-no-repeat bg-cover flex justify-center items-center relative md:bg-fixed;
+  @apply bg-[url('/img/construction.jpg')] h-screen bg-center bg-no-repeat bg-cover flex justify-center items-center relative md:bg-fixed;
 }
 
 .parallax2 {
-  @apply bg-[url('/img/office.jpg')] min-h-[1300px] bg-center bg-no-repeat bg-cover flex justify-center items-center relative md:bg-fixed;
+  @apply bg-[url('/img/office.jpg')] min-h-[1300px] bg-center bg-cover bg-no-repeat flex justify-center items-center relative md:bg-fixed;
 }
 
 .parallax3 {

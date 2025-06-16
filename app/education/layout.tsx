@@ -17,10 +17,11 @@ export default function EducationLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className='relative min-h-screen w-full flex flex-col overflow-hidden'>
       <Navbar variant="dark"/>
       <main className="flex-1">{children}</main>
       <Footer />
     </div>
+  
   );
 }
