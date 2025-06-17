@@ -5,7 +5,7 @@ import Navbar from '@/components/Navbar'
 
 import { FormEvent, useRef, useState } from 'react'
 import emailjs from 'emailjs-com';
-import toast, { Toaster } from 'react-hot-toast';
+import toast from 'react-hot-toast';
 import ToastNot from '@/components/toast';
 
 
