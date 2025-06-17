@@ -1,23 +1,80 @@
 'use client'
 import Footer from '@/components/footer'
 import Navbar from '@/components/Navbar'
-import { useState } from 'react'
+
+
+import { FormEvent, useRef, useState } from 'react'
+import emailjs from 'emailjs-com';
+import toast, { Toaster } from 'react-hot-toast';
+import ToastNot from '@/components/toast';
+
+
+
+// Grab values from env
+const SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!;
+const TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!;
+const PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!;
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' })
-  const [submitted, setSubmitted] = useState(false)
+   const [isSending, setIsSending] = useState(false);
+ const formRef = useRef<HTMLFormElement>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Here you can integrate your API or email service
-    console.log('Form data:', formData)
-    setSubmitted(true)
-    setFormData({ name: '', email: '', message: '' })
+
+  const sendEmail = async (e: FormEvent) => {
+  e.preventDefault();
+
+  if (!formRef.current) return;
+
+    const form = formRef.current;
+   const name = (form.elements.namedItem('name') as HTMLInputElement)?.value.trim();
+   const email = (form.elements.namedItem('email') as HTMLInputElement)?.value.trim();
+  const message = (form.elements.namedItem('message') as HTMLTextAreaElement)?.value.trim();
+
+
+     if (!name || !email || !message) {
+      toast.error('Please fill in all fields.');
+      return;
+    }
+
+    setIsSending(true);
+    const toastId = toast.loading('Sending message...');
+
+  try {
+    const result = await emailjs.sendForm(
+      SERVICE_ID,
+      TEMPLATE_ID,
+      formRef.current,
+      PUBLIC_KEY
+    );
+
+    if (process.env.NODE_ENV === 'development') {
+        console.log('Email sent:', result.text);
+      }
+    toast.success('Message sent successfully!', { id: toastId });
+     setFormData({ name: '', email: '', message: '' })
+  } catch (error: unknown) {
+    if (process.env.NODE_ENV === 'development') {
+    if (
+      typeof error === 'object' &&
+      error !== null &&
+      'text' in error
+    ) {
+      console.error('Error sending email:', (error as { text: string }).text);
+    } else {
+      console.error('Unexpected error:', error);
+    }
   }
+
+  toast.error('Failed to send message. Please try again.', { id: toastId });
+  }finally {
+      setIsSending(false);
+    }
+};
 
   return (
     <div className='relative min-h-screen w-full flex flex-col overflow-hidden'>
@@ -28,13 +85,8 @@ export default function ContactPage() {
         For academic inquiries, collaborations, or professional messages, kindly use the form below.
         Messages are reviewed by the office and responded to appropriately.
       </p>
-
-      {submitted ? (
-        <div className="bg-green-100 border border-green-300 text-green-800 p-4 rounded-2xl text-center">
-          Thank you for reaching out. Your message has been received.
-        </div>
-      ) : (
-        <form onSubmit={handleSubmit} className="bg-white shadow-md rounded-xl p-6 space-y-6">
+        <ToastNot />
+        <form onSubmit={sendEmail} ref={formRef} className="bg-white shadow-md rounded-xl p-6 space-y-6">
           <div>
             <label className="block text-sm font-medium text-gray-700">Full Name</label>
             <input
@@ -73,12 +125,16 @@ export default function ContactPage() {
 
           <button
             type="submit"
-            className="w-full bg-blue-600 cursor-pointer text-white py-2 rounded-md hover:bg-blue-700 transition"
+            //className="w-full bg-blue-600 cursor-pointer text-white py-2 rounded-md hover:bg-blue-700 transition"
+          disabled={isSending}
+          className={`w-full py-2 px-4 text-white rounded transition duration-300 ${
+            isSending ? 'bg-gray-400 cursor-not-allowed' : 'bg-teal-600 cursor-pointer hover:bg-teal-700'
+          }`}
           >
             Send Message
           </button>
         </form>
-      )}
+     
     </main>
     <Footer /> 
     </div>

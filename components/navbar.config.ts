@@ -11,7 +11,7 @@ export const navbarStyles = {
   dark: {
     text: 'text-gray-700',
     underline: 'after:bg-black/50',
-   position: 'relative'
+   position: 'relative mb-7'
   },
   primary: {
     text: 'text-blue-700',
