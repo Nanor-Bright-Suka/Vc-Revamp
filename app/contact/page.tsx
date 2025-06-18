@@ -58,7 +58,7 @@ export default function ContactPage() {
     toast.success('Message sent successfully!', { id: toastId });
      setFormData({ from_name: '', reply_email: '', message: '' })
   } catch (error: unknown) {
-    // if (process.env.NODE_ENV === 'development') {
+    if (process.env.NODE_ENV === 'development') {
     if (
       typeof error === 'object' &&
       error !== null &&
@@ -68,7 +68,7 @@ export default function ContactPage() {
     } else {
       console.error('Unexpected error:', error);
     }
-  
+  }
   toast.error('Failed to send message. Please try again.', { id: toastId });
   }finally {
       setIsSending(false);
