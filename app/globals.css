@@ -34,7 +34,8 @@ body, html {
 
 /* Overlay */
  .p-overlay1 {
-  @apply fixed w-full h-full top-0 left-0 z-10 bg-black/40;
+    @apply fixed w-full h-full top-0 left-0 z-10 bg-black/30;  
+   
   
 } 
 
