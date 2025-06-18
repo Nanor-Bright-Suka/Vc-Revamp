@@ -16,7 +16,7 @@ const TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!;
 const PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!;
 
 export default function ContactPage() {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' })
+  const [formData, setFormData] = useState({ from_name: '', reply_email: '', message: '' })
    const [isSending, setIsSending] = useState(false);
  const formRef = useRef<HTMLFormElement>(null);
 
@@ -31,8 +31,8 @@ export default function ContactPage() {
   if (!formRef.current) return;
 
     const form = formRef.current;
-   const name = (form.elements.namedItem('name') as HTMLInputElement)?.value.trim();
-   const email = (form.elements.namedItem('email') as HTMLInputElement)?.value.trim();
+   const name = (form.elements.namedItem('from_name') as HTMLInputElement)?.value.trim();
+   const email = (form.elements.namedItem('reply_email') as HTMLInputElement)?.value.trim();
   const message = (form.elements.namedItem('message') as HTMLTextAreaElement)?.value.trim();
 
 
@@ -56,7 +56,7 @@ export default function ContactPage() {
         console.log('Email sent:', result.text);
       }
     toast.success('Message sent successfully!', { id: toastId });
-     setFormData({ name: '', email: '', message: '' })
+     setFormData({ from_name: '', reply_email: '', message: '' })
   } catch (error: unknown) {
     if (process.env.NODE_ENV === 'development') {
     if (
@@ -69,7 +69,6 @@ export default function ContactPage() {
       console.error('Unexpected error:', error);
     }
   }
-
   toast.error('Failed to send message. Please try again.', { id: toastId });
   }finally {
       setIsSending(false);
@@ -83,7 +82,7 @@ export default function ContactPage() {
       <h1 className="text-3xl font-bold mb-4 text-center max-md:mt-12">Get in Touch</h1>
       <p className="text-center text-gray-600 mb-8">
         For academic inquiries, collaborations, or professional messages, kindly use the form below.
-        Messages are reviewed by the office and responded to appropriately.
+      
       </p>
         <ToastNot />
         <form onSubmit={sendEmail} ref={formRef} className="bg-white shadow-md rounded-xl p-6 space-y-6">
@@ -91,9 +90,9 @@ export default function ContactPage() {
             <label className="block text-sm font-medium text-gray-700">Full Name</label>
             <input
               type="text"
-              name="name"
+              name="from_name"
               required
-              value={formData.name}
+              value={formData.from_name}
               onChange={handleChange}
               className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:ring focus:ring-blue-200"
             />
@@ -103,9 +102,9 @@ export default function ContactPage() {
             <label className="block text-sm font-medium text-gray-700">Email Address</label>
             <input
               type="email"
-              name="email"
+              name="reply_email"
               required
-              value={formData.email}
+              value={formData.reply_email}
               onChange={handleChange}
               className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:ring focus:ring-blue-200"
             />

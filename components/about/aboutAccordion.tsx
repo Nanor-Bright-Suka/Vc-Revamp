@@ -10,7 +10,7 @@ type AccordionItem = {
 const items: AccordionItem[] = [
   {
     title: 'Current Leadership Roles',
-    content: `Professor Emmanuel Ohene Afoakwa is the Vice-Chancellor of Ghana Communication Technology University (GCTU), Tesano-Accra, previously known as Ghana Technology University College (GTUC). He is also the Chief of Fiapre Traditional Area in the Bono Region of Ghana `,
+    content: `Professor Emmanuel Ohene Afoakwa is the Vice-Chancellor of Ghana Communication Technology University (GCTU), formerly known as Ghana Technology University College (GTUC), located in Tesano, Accra. He also serves as the Chief of the Fiapre Traditional Area in the Bono Region of Ghana. `,
   },
   {
     title: 'Academic and Administrative Leadership',

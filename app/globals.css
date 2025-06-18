@@ -2,44 +2,46 @@
 @import "tailwindcss";
 
 /* Base styles */
-/* body, html {
+body, html {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   scroll-behavior: smooth;
   overflow-x: hidden;
-} */
+} 
 
 /* Parallax sections */
-/* .parallax1 {
+.parallax1 {
   @apply bg-[url('/img/construction.jpg')] min-h-[400px] h-[800px] bg-center bg-no-repeat bg-cover flex justify-center align-middle md:bg-fixed;
 }
 
 .parallax2 {
   @apply bg-[url('/img/office.jpg')] h-[1100px] md:bg-left-top bg-center bg-no-repeat bg-cover flex justify-center overflow-hidden md:bg-fixed;
-} */
+} 
 
-/* .parallax3 {
+.parallax3 {
   @apply bg-[url('/img/nice.jpg')] h-[800px] md:bg-left-top bg-center bg-no-repeat bg-cover flex justify-center overflow-hidden  md:bg-fixed;
-} */
+} 
 
 /* Content sections */
-/* .content1 {
+ .content1 {
   @apply bg-[url('/img/awards.jpg')] h-[1300px] bg-center bg-no-repeat bg-cover flex justify-center overflow-hidden;
-} */
+} 
 
-/* .content2 {
+.content2 {
   @apply bg-[url('/img/signing.jpg')] h-[1300px] bg-center bg-no-repeat bg-cover flex justify-center items-center overflow-hidden;
-} */
+} 
 
 /* Overlay */
-/* .p-overlay1 {
-  @apply fixed w-full h-full top-0 left-0 z-10 bg-black/30;
-} */
+ .p-overlay1 {
+  @apply fixed w-full h-full top-0 left-0 z-10 bg-black/40;
+  
+} 
 
 /* Icon button utility */
-/* .icon-btn {
+.icon-btn {
   @apply w-9 h-9 flex items-center justify-center rounded-full border border-white hover:bg-white hover:text-black transition duration-300 cursor-pointer;
-} */
+} 
 
 
 
@@ -48,16 +50,16 @@
 
 
 /* Base styles */
-html, body {
+/* html, body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 
-}
+} */
 
 
 /* Parallax sections */
- .parallax1 {
+ /* .parallax1 {
   @apply bg-[url('/img/construction.jpg')] h-screen bg-center bg-no-repeat bg-cover flex justify-center items-center relative md:bg-fixed;
 }
 
@@ -67,25 +69,25 @@ html, body {
 
 .parallax3 {
   @apply bg-[url('/img/nice.jpg')] min-h-[750px] bg-center bg-no-repeat bg-cover flex justify-center items-center relative md:bg-fixed;
-} 
+}  */
 
 /* Content sections */
-.content1 {
+/* .content1 {
   @apply bg-[url('/img/awards.jpg')] min-h-[1200px] bg-center bg-no-repeat bg-cover flex justify-center items-center relative;
 }
 
 .content2 {
   @apply bg-[url('/img/signing.jpg')] min-h-[1200px] bg-center bg-no-repeat bg-cover flex justify-center items-center relative;
-} 
+}  */
 
 /* Overlay */
-.p-overlay1 {
+/* .p-overlay1 {
   @apply absolute inset-0 z-10 bg-black/30;
-}
+} */
 
 /* Icon button utility */
-.icon-btn {
+/* .icon-btn {
   @apply w-9 h-9 flex items-center justify-center rounded-full border border-white hover:bg-white hover:text-black transition duration-300 cursor-pointer;
 }
-
+ */
 
