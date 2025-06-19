@@ -15,6 +15,8 @@ const SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!;
 const TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!;
 const PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!;
 
+
+
 export default function ContactPage() {
   const [formData, setFormData] = useState({ from_name: '', reply_email: '', message: '' })
    const [isSending, setIsSending] = useState(false);
@@ -124,7 +126,6 @@ export default function ContactPage() {
 
           <button
             type="submit"
-            //className="w-full bg-blue-600 cursor-pointer text-white py-2 rounded-md hover:bg-blue-700 transition"
           disabled={isSending}
           className={`w-full py-2 px-4 text-white rounded transition duration-300 ${
             isSending ? 'bg-gray-400 cursor-not-allowed' : 'bg-teal-600 cursor-pointer hover:bg-teal-700'

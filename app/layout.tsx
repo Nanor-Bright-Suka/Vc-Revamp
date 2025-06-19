@@ -5,6 +5,7 @@ import { Toaster } from "react-hot-toast";
 
 
 
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -16,8 +17,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Welcome To Dr. & Mrs Ohene Afoakwa's Homepage",
-  description: "This is a landing page for Dr. & Mrs Ohene Afoakwa's ",
+  title: "Welcome to Professor Emmanuel Ohene Afoakwa's Official Website",
+ description: "The official website of Prof. Emmanuel Ohene Afoakwa — a renowned academic and Vice-Chancellor of GCTU. Learn more about his research, leadership, and lifelong dedication to shaping education in Ghana.",
+
 };
 
 export default function RootLayout({
